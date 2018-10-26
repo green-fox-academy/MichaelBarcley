@@ -3,7 +3,7 @@
 
 Welcome to my repository! Please find my other (personal) repositories in the links below:
 
-Links:
+Links:  
 -[Week-01 Day-3 Hello World Repository](https://github.com/MichaelBarcley/hello-world)  
 -[Week-01 Day-3 Git-in Patchwork fork exercise](https://github.com/MichaelBarcley/patchwork)  
 -[Week-01 Day-3 GFA git-lesson-repo exercise](https://github.com/MichaelBarcley/git-lesson-repository)
