@@ -8,5 +8,5 @@ Links:
 [Week-01 Day-3 Git-in Patchwork fork exercise](https://github.com/MichaelBarcley/patchwork)  
 [Week-01 Day-3 GFA git-lesson-repo exercise](https://github.com/MichaelBarcley/git-lesson-repository)  
 
-##I am a member of the TipTop class. The syllabus repository can be found here:  
+## I am a member of the TipTop class. The syllabus repository can be found here:  
 [TipTop syllabus repo](https://github.com/green-fox-academy/tiptop-syllabus)  
