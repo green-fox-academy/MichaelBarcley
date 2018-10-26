@@ -6,6 +6,10 @@ _A list of commonly used Git commands_
 
 --
 
+### Levels of Git  
+
+![Levels of Git](https://unwiredlearning.com/wp-content/uploads/2018/07/git-flow-768x513.png)
+
 ### Getting & Creating Projects
 
 | Command | Description |
