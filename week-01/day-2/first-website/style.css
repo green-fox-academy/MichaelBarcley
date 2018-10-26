@@ -1,0 +1,77 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+
+body {
+    background-image: url("CSS/background.png");
+    margin-left: auto;
+    margin-right: auto;
+    font-family: consolas, courier;
+}
+
+.nav {
+    background-color: #333333;
+    margin: -10px 0;
+    padding: 0;
+    text-align: right;
+    max-width: 100%;
+}
+
+#logo {
+    text-align: left;
+    margin-left: 130px;
+}
+
+img {
+    width: 70px;
+    height: auto;
+}
+
+a, a:visited {
+    color: #ff0099;
+}
+
+.index, .wiki, .github, .contact {
+    position: absolute;
+    top: 25px;
+}
+
+.index {
+    right: 370px;
+}
+
+.wiki {
+    right: 295px;
+}
+
+.github {
+    right: 200px;
+}
+
+.contact {
+    right: 100px;
+}
+
+.divider {
+    text-align: center;
+}
+
+.realbody {
+    padding: 10%;
+    max-width: 1300px;
+}
+
+h1, h2, h3, h4 {
+    font-family: oswald;
+}
+
+h2 {
+    color: #ff0099;
+}
+
+h3 {
+    font-size: 35px;
+    text-align: center;
+}
+
+h4 {
+    font-size: 25px;
+}
