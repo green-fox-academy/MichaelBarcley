@@ -5,7 +5,6 @@ public class DrawPyramid {
         // Write a program that reads a number from the standard input, then draws a
         // pyramid like this:
         //
-        //
         //    *
         //   ***
         //  *****
@@ -20,20 +19,13 @@ public class DrawPyramid {
         String pyramidBlock = "*";
 
             for(int i = 1; i <= pyramidRows; i++) {
-                for(int j = i; j < pyramidRows; j++) {
+                for(int j = 1; j <= pyramidRows - i; j++) {
                     System.out.print(" ");
                 }
-                for(int k = 1; k <= (i*2); k++) {
+                for(int k = 1; k <= (i * 2) - 1; k++) {
                     System.out.print(pyramidBlock);
-                    //pyramidBlock += "*";
                 }
                 System.out.println("");
-
-            //for (int i = 1; i <= pyramidRows; i++) {
-              //  String emptyBlock = " ";
-              //  System.out.println(emptyBlock + pyramidBlock + emptyBlock);
-              //  pyramidBlock += "**";
-              //  emptyBlock += " ";
             }
         }
     }
