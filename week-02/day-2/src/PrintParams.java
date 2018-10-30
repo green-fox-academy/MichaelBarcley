@@ -15,20 +15,14 @@ public class PrintParams {
     }
 
     public static void convertString(String... inputText) {
-        for(int i = 1; i < inputText.length; i++) {
+        for (int i = 1; i < inputText.length; i++) {
             System.out.println(inputText[i] + " ");
         }
     }
 
     public static void printParams(String... inputText) {
-        for(String allInputs: inputText) {
+        for (String allInputs : inputText) {
             System.out.print(allInputs + " ");
         }
-    }
-
-    public static String stringScanner() {
-        Scanner scanner = new Scanner(System.in);
-        String givenText = scanner.next();
-        return givenText;
     }
 }
