@@ -9,19 +9,18 @@ public class Unique {
         //  Example
         //  System.out.println(unique(new int[] {1, 11, 34, 11, 52, 61, 1, 34}));
         //  should print: `[1, 11, 34, 52, 61]`
-        int myArray[] = {1, 11, 34, 11, 52, 61, 1, 34};
-        int uniqueArray[] = IntStream.of(myArray).distinct().toArray();
-        for (int i = 0; i < Array.getLength(uniqueArray); i++) {
-            System.out.print(uniqueArray[i] + " ");
+        int myArray[] = {1, 11, 34, 11, 52, 61, 1, 34}; //Megoldás 1
+        int uniqueArray[] = IntStream.of(myArray).distinct().toArray(); //Megoldás 1
+        for (int i = 0; i < Array.getLength(uniqueArray); i++) { //Megoldás 1
+            System.out.print(uniqueArray[i] + " "); //Megoldás 1
         }
         System.out.println("");
-        uniqueMaker(myArray);
-
+        uniqueMaker(myArray); //Megoldás 2
     }
 
     public static void uniqueMaker(int dasArray[]) {
         int uniqueArray[] = IntStream.of(dasArray).distinct().toArray();
-        for (int i = 0; i < dasArray.length - 3; i++) { // 3, mert 3 duplicate szám van az Arrayben
+        for (int i = 0; i < dasArray.length - (dasArray.length - uniqueArray.length); i++) {
             System.out.print(uniqueArray[i] + " ");
         }
     }
