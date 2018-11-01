@@ -1,0 +1,1 @@
+## This folder contains additional exercises that I've done by myself to see and practice the difference between Java and Typescript.
