@@ -8,8 +8,9 @@ public class Swap {
         System.out.println("Original value of b: " + b);
 
         //Swapping here
-        a = 526;
-        b = 123;
+        int c = a;
+        a = b;
+        b = c;
 
         System.out.println("Swapped value of a: " + a);
         System.out.println("Swapped value of b: " + b);
