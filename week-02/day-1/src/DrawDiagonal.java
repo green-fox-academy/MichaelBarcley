@@ -27,10 +27,8 @@ public class DrawDiagonal {
             for (int j = 1; j <= diagonalRows; j++)
                 if (i == j - 1 || j == 1 || j == diagonalRows) {
                     System.out.print(lego);
-                    //break;
                 } else {
                     System.out.print(blank);
-                    //break;
                 }
             System.out.println("");
         }
