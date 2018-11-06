@@ -16,7 +16,7 @@ public class Calculator {
         Scanner inputScanner = new Scanner(System.in);
         String userInput = inputScanner.nextLine();
         String[] seperatedInput = userInput.split(" ");
-        
+
         String operation = seperatedInput[0];
         double number1 = Double.parseDouble(seperatedInput[1]);
         double number2 = Double.parseDouble(seperatedInput[2]);
