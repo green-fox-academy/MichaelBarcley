@@ -15,8 +15,7 @@ public class RainbowBoxFunction {
             int squareSize = (int) (Math.random() * WIDTH);
             squareDrawer(graphics, squareSize, rainbowColours[i]);
         }
-
-
+        
     }
 
     public static void squareDrawer(Graphics g, int size, java.awt.Color colour) {
