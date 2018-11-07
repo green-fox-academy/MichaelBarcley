@@ -13,13 +13,11 @@ public class StarryNight {
         //  - The stars should have random color (some shade of grey)
         for (int i = 0; i < 10; i++) {
             int gray = (int) (Math.random() * 220);
-            //graphics.setColor(new Color((int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random() * 255)));
             graphics.setColor(new Color(gray, gray, gray));
             int size = (int) (Math.random() * 20);
             int x = (int) (Math.random() * WIDTH);
             int y = (int) (Math.random() * WIDTH);
             graphics.fillRect(x, y, size, size);
-
         }
 
 
