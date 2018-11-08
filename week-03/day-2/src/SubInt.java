@@ -27,7 +27,7 @@ public class SubInt {
                 resultList.add(Integer.toString(i));
             }
         }
-        
+
         return resultList;
     }
 }
