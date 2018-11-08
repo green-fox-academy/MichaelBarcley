@@ -8,17 +8,12 @@ public class LinePlay {
         int y1 = 0;
         int x2 = 0;
 
-        graphics.setColor(Color.GREEN);
         for (int i = 0; i < density; i++) {
             y1 = i * HEIGHT / (density - 1);
             x2 = i * WIDTH / (density - 1);
+            graphics.setColor(Color.GREEN);
             graphics.drawLine(0, y1, x2, HEIGHT);
-        }
-
-        graphics.setColor(new Color(168, 0, 224));
-        for (int i = 0; i < density; i++) {
-            y1 = i * HEIGHT / (density - 1);
-            x2 = i * WIDTH / (density - 1);
+            graphics.setColor(new Color(168, 0, 224));
             graphics.drawLine(WIDTH, y1, x2, 0);
         }
     }
