@@ -5,7 +5,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Triangles {
     public static void mainDraw(Graphics graphics) {
-        int howManyRows = 11;
+        int howManyRows = 4;
         triangleDrawer(graphics, howManyRows);
     }
 
