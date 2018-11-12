@@ -14,7 +14,7 @@ public class Logs {
 
   public static void main(String[] args) {
     getIpAddresses();
-    //requestRatio();
+    requestRatio();
   }
 
   public static String[] getIpAddresses() {
@@ -33,7 +33,25 @@ public class Logs {
     }
   }
 
-  /*public static int requestRatio() {
-    return;
-  }*/
+  public static double requestRatio() {
+    double getCommands = 0;
+    double postCommands = 0;
+
+    try {
+      List<String> tempFileAfterRead = Files.readAllLines(inputFile);
+      for (int i = 0; i < tempFileAfterRead.size(); i++) {
+        if (tempFileAfterRead.get(i) != null) {
+          if (tempFileAfterRead.get(i).contains("GET")) {
+            getCommands++;
+          } else if (tempFileAfterRead.get(i).contains("POST")) {
+            postCommands++;
+          }
+        }
+      }
+      double getPostRatio = (getCommands) * 100 / (getCommands + postCommands);
+      return getPostRatio;
+    } catch (IOException ie) {
+      return 0;
+    }
+  }
 }
