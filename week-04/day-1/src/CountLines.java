@@ -9,7 +9,7 @@ public class CountLines {
   // then returns the number of lines the file contains.
   // It should return zero if it can't open the file, and
   // should not raise any error.
-  
+
   public static void main(String[] args) {
     System.out.println("Rows in the opened file: " + countLinesInFile());
   }
