@@ -5,10 +5,10 @@ public class Sharpie {
   float width;
   float inkAmount;
 
-  Sharpie(String color, float width) {
+  Sharpie(String color, float width, float inkAmount) {
     this.color = color;
     this.width = width;
-    this.inkAmount = 100;
+    this.inkAmount = inkAmount;
   }
 
   public float use() {
