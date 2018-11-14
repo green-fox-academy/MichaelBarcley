@@ -54,6 +54,7 @@ public class Ship {
       int indexOfPirateKilled = (int) (Math.random() * this.alivePirates());
       ship.remove(indexOfPirateKilled);
     }
+    ship.get(0).isCaptain = true; //This ensures that there is always a captain, if the old one dies.
   }
 
   public boolean battle(Ship anotherShip) {
