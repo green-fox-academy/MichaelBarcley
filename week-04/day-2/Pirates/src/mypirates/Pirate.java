@@ -70,4 +70,14 @@ public class Pirate {
       System.out.println("Yarr! Where's mah parrot?");
     }
   }
+
+  public String status() {
+    if (this.isDead) {
+      return "He is dead.";
+    } else if (this.isSleeping) {
+      return  "He is alive, but sleeping.";
+    } else {
+      return "He is alive and ready to plunder some booty!";
+    }
+  }
 }

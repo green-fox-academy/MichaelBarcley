@@ -27,5 +27,15 @@ public class Main {
     //Testing Ship class
     Ship blackPearl = new Ship();
     blackPearl.fillShip();
+    blackPearl.getListOfCrew();
+
+    Ship theJuggernaut = new Ship();
+    theJuggernaut.fillShip();
+    theJuggernaut.getListOfCrew();
+
+    blackPearl.battle(theJuggernaut);
+    System.out.println("\nAfter the battle:");
+    blackPearl.getListOfCrew(); //After battle ship status
+    theJuggernaut.getListOfCrew();
   }
 }
