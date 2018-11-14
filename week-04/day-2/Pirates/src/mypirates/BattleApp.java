@@ -12,7 +12,7 @@ public class BattleApp {
 
     blackPearl.battle(theJuggernaut);
     System.out.println("\nAfter the battle:\n");
-    blackPearl.getListOfCrew(); //After battle ship status
+    blackPearl.getListOfCrew();
     theJuggernaut.getListOfCrew();
   }
 }

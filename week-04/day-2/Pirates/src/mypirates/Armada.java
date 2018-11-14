@@ -43,19 +43,24 @@ public class Armada {
     while (this.size() != 0 &&  anotherArmada.size() != 0) {
       int currentShipStrArmadaA = this.getShipScore(0);
       int currentShipStrArmadaB = anotherArmada.getShipScore(0);
-      System.out.println("\nCurrent battle: Ship " + armadaAcurrent + " from " + this.armadaName + " vs. Ship " + armadaBcurrent + " from " + anotherArmada.armadaName);
+
+      System.out.println("\nCurrent battle: Ship " + armadaAcurrent + " from " + this.armadaName + " vs. Ship " +
+          armadaBcurrent + " from " + anotherArmada.armadaName);
       System.out.println("Strength of current ship from " + this.armadaName + " is " + currentShipStrArmadaA +
           " while strength of current ship from " + anotherArmada.armadaName + " is " + currentShipStrArmadaB);
+
       if (this.getShipScore(0) >= anotherArmada.getShipScore(0)) {
         this.getShip(0).battleWon();
         anotherArmada.remove(0);
         armadaBcurrent++;
-        System.out.println("The ship from " + this.armadaName + " defeated the ship from " + anotherArmada.armadaName + "!");
+        System.out.println("The ship from " + this.armadaName + " defeated the ship from " +
+            anotherArmada.armadaName + "!");
       } else {
         anotherArmada.getShip(0).battleWon();
         armada.remove(0);
         armadaAcurrent++;
-        System.out.println("The ship from " + anotherArmada.armadaName + " defeated the ship from " + this.armadaName + "!");
+        System.out.println("The ship from " + anotherArmada.armadaName + " defeated the ship from " +
+            this.armadaName + "!");
       }
     }
     if (this.size() > 0) {
