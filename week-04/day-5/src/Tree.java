@@ -38,7 +38,7 @@ public class Tree {
         jFrame.setVisible(true);
 
         double seconds = 0;
-        while (seconds < 60) {
+        while (seconds < 600) {
             ImagePanel panel = new ImagePanel();
             panel.setPreferredSize(new Dimension(WIDTH, HEIGHT));
             jFrame.add(panel);
