@@ -1,4 +1,4 @@
-package week05.demo;
+package demo;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -40,6 +40,7 @@ public class CalculatorGUI extends Frame implements ActionListener {
 
         this.calculate = new Button("Calculate");
         this.add(calculate);
+        this.calculate.addActionListener(this);
 
         this.setTitle("Hello TipTop");
         this.setSize(245, 245);
@@ -54,6 +55,11 @@ public class CalculatorGUI extends Frame implements ActionListener {
         } else {
             return inputNumber * factorialCalculator(inputNumber - 1);
         }
+    }
+
+    public void windowClosing(WindowEvent e) {
+        dispose();
+        System.exit(0);
     }
     
 
