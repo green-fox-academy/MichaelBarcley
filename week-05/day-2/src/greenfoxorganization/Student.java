@@ -19,7 +19,7 @@ public class Student extends Person {
   }
 
   public String introduce() {
-    return super.introduce() + " who skipped " + this.skippedDays + " days from the course already"
+    return super.introduce() + " who skipped " + this.skippedDays + " days from the course already";
   }
 
   public int skipDays(int days) {
