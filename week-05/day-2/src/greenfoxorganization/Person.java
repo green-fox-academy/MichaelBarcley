@@ -20,6 +20,6 @@ public class Person {
   }
 
   public String getGoal() {
-    return "My goal is: Live for the moment!";
+    return "My goal is: Live for the moment";
   }
 }

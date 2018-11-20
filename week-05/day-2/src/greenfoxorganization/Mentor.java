@@ -13,7 +13,7 @@ public class Mentor extends Person {
   }
 
   public String getGoal() {
-    return "Educate brilliant junior software developers.";
+    return "My goal is Educate brilliant junior software developers";
   }
 
   public String introduce() {

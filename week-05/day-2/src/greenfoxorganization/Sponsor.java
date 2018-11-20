@@ -15,7 +15,7 @@ public class Sponsor extends Person{
   }
 
   public String introduce() {
-    return super.introduce() + "who represents " + this.company + " and hired " + this.hiredStudents + " students so far";
+    return super.introduce() + " who represents " + this.company + " and hired " + this.hiredStudents + " students so far";
   }
 
   public int hire() {
@@ -23,6 +23,6 @@ public class Sponsor extends Person{
   }
 
   public String getGoal() {
-    return "Hire brilliant junior software developers";
+    return "My goal is: Hire brilliant junior software developers";
   }
 }

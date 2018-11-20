@@ -15,7 +15,7 @@ public class Student extends Person {
   }
 
   public String getGoal() {
-    return "Be a junior software developer.";
+    return "My goal is: Be a junior software developer";
   }
 
   public String introduce() {
