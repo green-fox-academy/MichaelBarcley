@@ -11,9 +11,10 @@ public class Garden {
   }
 
   public void waterPlants(int waterAmount) {
+    System.out.println("\nWatering with " + waterAmount);
     int thirstyPlants = 0;
-    for (int i = 0; i < listOfPlants.size(); i++) {
-      if (listOfPlants.get(i).isThirsty()) {
+    for (Plant plant : listOfPlants) {
+      if (plant.currentWaterLevel < plant.criticalWaterLevel) {
         thirstyPlants++;
       }
     }
@@ -28,5 +29,15 @@ public class Garden {
 
   public void addPlant(Plant plant) {
     listOfPlants.add(plant);
+  }
+
+  public void getStatusOfAll() {
+    for (int i = 0; i < listOfPlants.size(); i++) {
+      if (listOfPlants.get(i).isThirsty()) {
+        System.out.println("The " + listOfPlants.get(i).color + " " + listOfPlants.get(i).plantType + " needs water!");
+      } else {
+        System.out.println("The " + listOfPlants.get(i).color + " " + listOfPlants.get(i).plantType + " Plant doesn't need water!");
+      }
+    }
   }
 }

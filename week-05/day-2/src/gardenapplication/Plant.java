@@ -1,7 +1,8 @@
 package gardenapplication;
 
 public class Plant {
-  private String color;
+  protected String plantType;
+  protected String color;
   protected int currentWaterLevel;
   protected int criticalWaterLevel;
   protected double absorptionEfficiency;
