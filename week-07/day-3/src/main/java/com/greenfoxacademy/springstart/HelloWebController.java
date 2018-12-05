@@ -17,7 +17,17 @@ public class HelloWebController {
       "Salve", "Ciao", "Kon-nichiwa", "An-nyong Ha-se-yo", "Salvëte", "Ni hao", "Dzien' dobry", "Olá", "Bunã ziua", "Zdravstvuyte", "Hola", "Jambo", "Hujambo", "Hej",
       "Sa-wat-dee", "Merhaba", "Selam", "Vitayu", "Xin chào", "Hylo", "Sut Mae", "Sholem Aleychem", "Sawubona"};
 
-
+  public static String gencode() {
+    String[] letters = new String[15];
+    letters = "0123456789ABCDEF".split("");
+    String code = "#";
+    for (int i = 0; i < 6; i++) {
+      double ind = Math.random() * 15;
+      int index = (int) Math.round(ind);
+      code += letters[index];
+    }
+    return code;
+  }
 
   @RequestMapping("/web/greeting")
   public String greeting(Model model, @RequestParam(value = "name", required = false, defaultValue = " World") String name) {
@@ -28,7 +38,7 @@ public class HelloWebController {
     id.addAndGet(1);
     model.addAttribute("id", id);
     model.addAttribute("size", fontSize);
-    model.addAttribute("rgb", "color: " + colors[getColorId]);
+    model.addAttribute("rgb", gencode());
     return "greeting";
   }
 }
