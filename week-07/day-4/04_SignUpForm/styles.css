@@ -39,6 +39,10 @@ input,
     text-align: center;
 }
 
+.invisiblebox {
+    margin: 10% 0px 0px 0px;
+}
+
 .facebook {
   background-color: #3B5998;
   color: white;
