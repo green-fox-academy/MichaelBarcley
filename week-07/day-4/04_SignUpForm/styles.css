@@ -81,6 +81,10 @@ input,
     border-radius: 100%;
 }
 
+.or > p {
+    margin-top: 13px;
+}
+
 button {
     color: white;
     background-color: green;
