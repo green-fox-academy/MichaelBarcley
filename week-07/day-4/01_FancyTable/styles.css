@@ -1,0 +1,39 @@
+body {
+    background-color: rgba(110, 110, 255, 0.8);
+}
+
+table {
+    width: 40%;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    border: 2px solid rgba(148, 148, 148, 0.8);
+    font-size: 22px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+th, td {
+    height: 50px;
+    text-align: left;
+    padding: 10px 20px;
+}
+
+th {
+    background-color: black;
+    border-bottom: 6px solid gray;
+    color: rgb(225, 225, 225);
+    font-weight: normal;
+}
+
+td {
+    color: rgb(85, 85, 85);
+}
+
+tr:nth-child(even) {
+    background-color: lightgray;
+}
+
+tr:nth-child(odd) {
+    background-color: white;
+}
