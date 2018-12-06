@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu;
+}
+
+body {
+    background-color: lightgray;
+}
+
+.container {
+  background-color: white;
+  width: 60%;
+  margin: 50px auto;
+  padding: 20px 30px 30px;
+  border-radius: 5px;
+}
+
+h1 {
+    font-weight: normal;
+}
+
+input,
+.social {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 2px;
+  margin: 10px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+}
+
+.social {
+    text-decoration: none;
+    text-align: center;
+}
+
+
+.facebook {
+  background-color: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background-color: #55ACEE;
+  color: white;
+}
+
+.google {
+  background-color: #dd4b39;
+  color: white;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Two-column layout */
+.col {
+  float: left;
+  width: 50%;
+  margin: auto;
+  padding: 0 50px;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.or {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: lightgray;
+  height: 20px;
+  border-radius: 100%;
+}
+
+
+button {
+    color: white;
+    background-color: green;
+    border: none;
+    width: 150px;
+    height: 50px;
+    text-transform: uppercase;
+}
