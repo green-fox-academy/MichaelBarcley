@@ -4,7 +4,10 @@
 }
 
 body {
-    background-color: lightgray;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: linear-gradient(#a8d6a8, #8a86aa);
 }
 
 .container {
@@ -17,26 +20,24 @@ body {
 
 h1 {
     font-weight: normal;
+    margin: 20px 50px;
 }
 
 input,
 .social {
   width: 100%;
-  padding: 12px;
+  padding: 10px 0px;
   border: none;
   border-radius: 2px;
   margin: 10px 0;
-  opacity: 0.85;
   display: inline-block;
-  font-size: 17px;
-  line-height: 20px;
+  font-size: 16px;
 }
 
 .social {
     text-decoration: none;
     text-align: center;
 }
-
 
 .facebook {
   background-color: #3B5998;
@@ -53,41 +54,28 @@ input,
   color: white;
 }
 
-input[type=submit] {
-  background-color: #4CAF50;
-  color: white;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-
-/* Two-column layout */
 .col {
-  float: left;
-  width: 50%;
-  margin: auto;
-  padding: 0 50px;
-  margin-top: 6px;
+    flex: 50%;
+    margin: auto;
+    padding: 0 50px;
+    margin-top: 5px;
 }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+.row {
+    display: flex;
 }
 
 .or {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-  background-color: lightgray;
-  height: 20px;
-  border-radius: 100%;
+    position: absolute;
+    left: 50%;
+    margin-top: 5%;
+    transform: translate(-50%);
+    background-color: lightgray;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 100%;
 }
-
 
 button {
     color: white;
@@ -96,4 +84,5 @@ button {
     width: 150px;
     height: 50px;
     text-transform: uppercase;
+    margin: 20px 0px;
 }
