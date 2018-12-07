@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>WEBSHOP ohhh yeah #</title>
+    <link rel="stylesheet" th:href="@{styles.css}" />
+    <meta charset="utf-8" />
+</head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>My Shop</h1>
+      </div>
+      <div class="navbar">
+        <button type="navbar">ONLY AVAILABLE</button>
+        <button type="navbar">CHEAPEST FIRST</button>
+        <button type="navbar">CONTAINS NIKE</button>
+        <button type="navbar">AVARAGE STOCK</button>
+        <button type="navbar">MOST EXPENSIVE AVAILABLE</button>
+      </div>
+      <div class="searchbar">
+        <p>Search for:</p>
+        <input type="text" placeholder="...something like nike">
+        <button type="search">Search</button>
+      </div>
+      <div class="table">
+        <table>
+          <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity of stock</th>
+              </tr>
+              <tr th:each="item : ${items}">
+                  <td class="itemname" th:text="${item.getName()}"></td>
+                  <td class="itemdescription" th:text="${item.getDescription()}"></td>
+                  <td class="itemprice" th:text="${item.getPrice()} + ' Kč'"></td>
+                  <td class="itemquantity" th:text="${item.getQuantityOfStock()}"></td>
+              </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
