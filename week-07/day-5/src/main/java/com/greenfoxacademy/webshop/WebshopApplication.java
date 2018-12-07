@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,15 +12,10 @@ import java.util.List;
 @SpringBootApplication
 @Controller
 public class WebshopApplication {
-  List<ShopItem> shopItemsList;
+  Stock stock;
 
   public WebshopApplication() {
-    shopItemsList = new ArrayList<>();
-    shopItemsList.add(new ShopItem("Running shoes", "Nike running shoes for every day sport", 1000.0, 5));
-    shopItemsList.add(new ShopItem("Printer", "Some HP printer that will print pages", 3000.0, 2));
-    shopItemsList.add(new ShopItem("Coca Cola", "0.5l standard coke", 25.0, 0));
-    shopItemsList.add(new ShopItem("Wokin", "Chicken with fried rice and WOKIN sauce", 119.0, 100));
-    shopItemsList.add(new ShopItem("T-shirt", "Blue with a corgi on a bike", 300.0, 1));
+    stock = new Stock();
   }
 
   public static void main(String[] args) {
@@ -30,8 +24,44 @@ public class WebshopApplication {
 
   @RequestMapping("/")
   public String webshop(Model model) {
-    model.addAttribute("items", shopItemsList);
+    model.addAttribute("items", stock.shopItemsList);
     return "webshop";
+  }
+
+  @RequestMapping("/only-available")
+  public String onlyavailable(Model model) {
+    List<ShopItem> availableItems = new ArrayList<>();
+    for (ShopItem item: stock.shopItemsList) {
+      if (item.getQuantityOfStock() > 0) {
+        availableItems.add(item);
+      }
+    }
+    model.addAttribute("items", availableItems);
+    return "onlyavailable";
+  }
+
+  @RequestMapping("/cheapest-first")
+  public String cheapestfirst(Model model) {
+    List<ShopItem> cheapestItems = new ArrayList<>();
+    List<ShopItem> tempItemList = new ArrayList<>();
+    for (ShopItem item: stock.shopItemsList) {
+      tempItemList.add(item);
+    }
+
+    for (int i = tempItemList.size(); i > 0; i--) {
+      int index = 0;
+      double price = 99999999;
+      for (int j = 0; j < tempItemList.size(); j++) {
+        if (price > tempItemList.get(j).getPrice()) {
+          price = tempItemList.get(j).getPrice();
+          index = j;
+        }
+      }
+      cheapestItems.add(tempItemList.get(index));
+      tempItemList.remove(index);
+    }
+    model.addAttribute("items", cheapestItems);
+    return "cheapestfirst";
   }
 }
 

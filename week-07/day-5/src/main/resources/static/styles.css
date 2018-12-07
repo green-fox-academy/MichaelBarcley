@@ -18,7 +18,8 @@ h1 {
   font-size: 40px;
 }
 
-button[type="navbar"] {
+.navbar > a {
+  text-decoration: none;
   padding: 3px 8px;
   margin: 20px 5px;
   background-color: rgb(241,69,61);
