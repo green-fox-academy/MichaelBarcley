@@ -59,13 +59,13 @@ public class WebshopApplication {
   }
 
   @RequestMapping("/average-stock")
-  public String averageStock(Model model) {
+  public String getAverageStock(Model model) {
     int itemCounter = 0;
     for (int i = 0; i < stock.shopItemsList.size(); i++) {
       itemCounter += stock.shopItemsList.get(i).getQuantityOfStock();
     }
-    int averageStock = itemCounter / stock.shopItemsList.size();
-    model.addAttribute("average-stock", averageStock);
+    double averageStock = itemCounter / (double) stock.shopItemsList.size();
+    model.addAttribute("averagestock", averageStock);
     return "average-stock";
   }
 
