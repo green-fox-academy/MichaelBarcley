@@ -7,7 +7,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @SpringBootApplication
 @Controller
@@ -30,38 +32,52 @@ public class WebshopApplication {
 
   @RequestMapping("/only-available")
   public String onlyavailable(Model model) {
-    List<ShopItem> availableItems = new ArrayList<>();
-    for (ShopItem item: stock.shopItemsList) {
-      if (item.getQuantityOfStock() > 0) {
-        availableItems.add(item);
-      }
-    }
-    model.addAttribute("items", availableItems);
-    return "onlyavailable";
+    model.addAttribute("items", stock.shopItemsList
+        .stream()
+        .filter(shopItem -> shopItem.getQuantityOfStock() > 0)
+        .collect(Collectors.toList()));
+    return "webshop";
   }
 
   @RequestMapping("/cheapest-first")
   public String cheapestfirst(Model model) {
-    List<ShopItem> cheapestItems = new ArrayList<>();
-    List<ShopItem> tempItemList = new ArrayList<>();
-    for (ShopItem item: stock.shopItemsList) {
-      tempItemList.add(item);
-    }
+    model.addAttribute("items", stock.shopItemsList
+        .stream()
+        .sorted(Comparator.comparing(ShopItem::getPrice))
+        .collect(Collectors.toList()));
+    return "webshop";
+  }
 
-    for (int i = tempItemList.size(); i > 0; i--) {
-      int index = 0;
-      double price = 99999999;
-      for (int j = 0; j < tempItemList.size(); j++) {
-        if (price > tempItemList.get(j).getPrice()) {
-          price = tempItemList.get(j).getPrice();
-          index = j;
-        }
-      }
-      cheapestItems.add(tempItemList.get(index));
-      tempItemList.remove(index);
+  @RequestMapping("/contains-nike")
+  public String containsNike(Model model) {
+    model.addAttribute("items", stock.shopItemsList
+    .stream()
+    .filter(shopItem -> shopItem.getDescription().toLowerCase().contains("nike")
+        || shopItem.getName().contains("Nike"))
+    .collect(Collectors.toList()));
+    return "webshop";
+  }
+
+  @RequestMapping("/average-stock")
+  public String averageStock(Model model) {
+    int itemCounter = 0;
+    for (int i = 0; i < stock.shopItemsList.size(); i++) {
+      itemCounter += stock.shopItemsList.get(i).getQuantityOfStock();
     }
-    model.addAttribute("items", cheapestItems);
-    return "cheapestfirst";
+    int averageStock = itemCounter / stock.shopItemsList.size();
+    model.addAttribute("average-stock", averageStock);
+    return "average-stock";
+  }
+
+  @RequestMapping("/most-expensive")
+  public String getMostExpensive(Model model) {
+    List<ShopItem> tempItems = stock.shopItemsList
+        .stream()
+        .filter(shopItem -> shopItem.getQuantityOfStock() > 0)
+        .sorted(Comparator.comparing(ShopItem::getPrice).reversed())
+        .collect(Collectors.toList());
+    model.addAttribute("items", tempItems.get(0));
+    return "webshop";
   }
 }
 
