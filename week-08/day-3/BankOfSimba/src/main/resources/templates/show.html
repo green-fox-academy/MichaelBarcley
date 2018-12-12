@@ -2,13 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Welcome to the Bank of Simba!</title>
-    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <link rel="stylesheet" th:href="@{style.css}"/>
     <meta charset="utf-8"/>
 </head>
 <body>
-<div th:each="bankAccount : ${accounts}">
-    <h1 th:text="${bankAccount.getName()} + ' (' +${bankAccount.getAnimalType()} + ') - ' +${#numbers.formatDecimal(bankAccount.getBalance(), 0, 'COMMA', 2, 'POINT')} + ' Zebra'"></h1>
-</div>
+<p th:text="${name}"/>
+<p th:text="${#numbers.formatDecimal(balance, 1, 'COMMA', 2, 'POINT')}"/>
+<p th:text="${animalType}"/>
 
 </body>
 </html>

@@ -10,7 +10,9 @@ public class Show {
 
   @RequestMapping("/show")
   public String show(Model model) {
-    model.addAttribute("accounts", BankofsimbaApplication.allAccounts.getListOfAccounts());
+    model.addAttribute("name", BankofsimbaApplication.testAccount.getName());
+    model.addAttribute("balance", BankofsimbaApplication.testAccount.getBalance());
+    model.addAttribute("animalType", BankofsimbaApplication.testAccount.getAnimalType());
     return "show";
   }
 }
