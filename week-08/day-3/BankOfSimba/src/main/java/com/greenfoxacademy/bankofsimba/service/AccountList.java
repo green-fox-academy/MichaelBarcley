@@ -12,14 +12,19 @@ public class AccountList {
   }
 
   public void loadAccounts() {
-    listOfAccounts.add(new BankAccount("Simba", 2000, "lion"));
-    listOfAccounts.add(new BankAccount("Timon", 1300, "meerkat"));
-    listOfAccounts.add(new BankAccount("Pumba", 1650, "warthog"));
-    listOfAccounts.add(new BankAccount("Mufasa", 2900.1, "lion"));
-    listOfAccounts.add(new BankAccount("Zordon", 600, "lion"));
+    listOfAccounts.add(new BankAccount("Simba", 2000, "Lion", true));
+    listOfAccounts.add(new BankAccount("Timon", 1300, "Meerkat", true));
+    listOfAccounts.add(new BankAccount("Pumba", 1650, "Warthog", true));
+    listOfAccounts.add(new BankAccount("Mufasa", 2900.1, "Lion", false));
+    listOfAccounts.add(new BankAccount("Zordon", 19600, "Lion", false));
+    listOfAccounts.get(4).setKing(true);
   }
 
   public List<BankAccount> getListOfAccounts() {
     return listOfAccounts;
+  }
+
+  public void addAccount(BankAccount account) {
+    listOfAccounts.add(account);
   }
 }

@@ -2,8 +2,22 @@ body {
     background-color: rgba(110, 110, 255, 0.5);
 }
 
+.header {
+    margin: 1% 1px;
+}
+
+a {
+    text-align: center;
+    text-decoration: none;
+    font-size: 30px;
+    color: rgb(85, 85, 85);
+    margin-right: 10px;
+    background-color: white;
+    padding: 5px 10px;
+}
+
 table {
-    width: 40%;
+    width: 60%;
 }
 
 table, thead, td {
@@ -15,7 +29,7 @@ table, thead, td {
 
 thead, td {
     height: 50px;
-    text-align: left;
+    text-align: center;
     padding: 10px 20px;
 }
 

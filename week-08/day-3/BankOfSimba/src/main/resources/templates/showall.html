@@ -7,11 +7,18 @@
 </head>
 <body>
 
+<div class="header">
+    <a href="/addaccount">Create New Account</a>
+    <a href="/transfer">Give money</a>
+</div>
+
 <table>
     <thead class="head">
     <td>ID</td>
     <td>Name</td>
     <td>Animal Type</td>
+    <td>Rank</td>
+    <td>Good or bad guy?</td>
     <td>Balance</td>
     </thead>
     <tbody>
@@ -20,6 +27,21 @@
             <td th:text="${bankAccountStat.count}"></td>
             <td th:text="${bankAccount.getName()}"></td>
             <td th:text="${bankAccount.getAnimalType()}"></td>
+            <div>
+                <div th:if="${bankAccount.isKing()}">
+                    <td class="icons"><img th:src="@{/img/crown.png}"/></td>
+                </div>
+                <div th:unless="${bankAccount.isKing()}">
+                    <td class="icons"></td>
+                </div>
+            </div>
+
+            <div th:switch="${bankAccount.isGoodGuy()}">
+                <td th:case="true">Good</td>
+                <td th:case="false">Bad</td>
+                <td th:case="*">User is some other thing</td>
+            </div>
+
             <td th:text="${#numbers.formatDecimal(bankAccount.getBalance(), 1, 'COMMA', 2, 'POINT')} + ' Zebra'"></td>
         </tr>
     </th:block>

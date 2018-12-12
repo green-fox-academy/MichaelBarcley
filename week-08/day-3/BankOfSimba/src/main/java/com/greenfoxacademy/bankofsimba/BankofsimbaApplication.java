@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class BankofsimbaApplication {
-  public static BankAccount testAccount = new BankAccount("Test", 0, "...whatever");
+  public static BankAccount testAccount = new BankAccount("Test", 0, "...whatever", true);
   public static AccountList allAccounts = new AccountList();
 
   public static void main(String[] args) {
