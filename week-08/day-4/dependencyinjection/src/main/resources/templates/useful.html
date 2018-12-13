@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>It is colored!</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <meta charset="utf-8"/>
 </head>
-<body>
-<a href="/useful/colored">Colored</a>
-<a href="/useful/email">Email validator</a>
-<a href="/useful/caesar">Caesar encoder/decoder</a>
+<header th:fragment="header">
+    <a href="/useful/colored">Colored</a>
+    <a href="/useful/email">Email validator</a>
+    <a href="/useful/caesar">Caesar encoder/decoder</a>
+</header>
 
 </body>
 </html>
