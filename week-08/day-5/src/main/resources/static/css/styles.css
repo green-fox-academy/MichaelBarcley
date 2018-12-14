@@ -5,6 +5,7 @@
     font-size: 1rem;
     text-decoration: none;
     color: black;
+    text-align: center;
 
 }
 
@@ -16,7 +17,43 @@ header {
     padding: 10px 10px;
 }
 
+header h1 {
+    margin: 10px 0px 20px;
+    font-size: 2rem;
+}
+
+header a {
+    margin: 10px 15px;
+    padding: 5px;
+    background-color: cornflowerblue;
+    color: white;
+}
+
 img {
     border: 5px solid black;
     border-radius: 10px;
+    margin: 15px 0px;
+}
+
+main p {
+    margin: 3px 0px;
+}
+
+main h2 {
+    margin: 15px 0px 3px;
+}
+
+footer {
+    margin: 30px;
+}
+
+select {
+    margin: 10px 0px;
+}
+
+.whiteline {
+    background-color: white;
+    width: 60%;
+    height: 2px;
+    margin: 10px auto;
 }

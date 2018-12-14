@@ -14,7 +14,7 @@
     <div id="status" th:object="${fox}">
         <p th:text="|This is *{name}.|"></p>
         <p th:text="*{food==null && drink==null}
-        ?'Currently living on only dirt :(. He knows' + *{tricks.size()} + 'tricks.'
+        ?'Currently living on only dirt :(. He knows ' + *{tricks.size()} + ' tricks.'
         :'Currently living on ' + *{food} + ' and ' + *{drink} + '. He knows ' + *{tricks.size()} + ' tricks.'"></p>
     </div>
     <div id="tricks" th:object="${fox}">
