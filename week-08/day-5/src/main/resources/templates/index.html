@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Green Fox Club</title>
+    <link rel="stylesheet" th:href="@{css/styles.css}"/>
+</head>
+<body>
+<header th:replace="base :: header"></header>
+<div id="fox-picture">
+    <img src="../img/greenfox.png">
+</div>
+<div id="status" th:object="${fox}">
+    <p th:text="|This is *{name}.|"></p>
+    <p th:if="*{food} == null and *{drink} == null"
+       th:text="|Currently living on nothing. He knows *{tricks.size()} tricks.|"></p>
+    <p th:unless="*{food} == null and *{drink} == null"
+       th:text="|Currently living on *{food} and *{drink}. He knows *{tricks.size()} tricks.|"></p>
+    </span>
+</div>
+<div id="tricks" th:object="${fox}">
+    <h1>Known tricks</h1>
+    <p th:if="*{tricks.size()} == 0">You know no tricks yet. Go and learn some.</p>
+    <ul th:unless="*{tricks.size()} == 0">
+        <li th:each="trick : *{getTricks()}" th:text="${trick}"></li>
+    </ul>
+</div>
+</body>
+</html>
