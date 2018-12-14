@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>It is colored!</title>
+    <title>Programmer Fox Club</title>
     <link rel="stylesheet" th:href="@{css/styles.css}"/>
     <meta charset="utf-8"/>
 </head>
 <header th:fragment="header">
-    <div id="options" th:object="${fox}">
-        <ul>
-            <li><a th:href="|/?name=*{name}|">Information</a></li>
-            <li><a th:href="|/nutritionStore?name=*{name}|">Nutrition Store</a></li>
-            <li><a th:href="|/trickCenter?name=*{name}|">Trick Center</a></li>
-        </ul>
+    <h1>Welcome to the Programmer Fox Club!</h1>
+    <div class="options" th:object="${fox}">
+        <a th:href="|/?name=*{name}|">Information</a>
+        <a th:href="|/nutritionStore?name=*{name}|">Nutrition Store</a>
+        <a th:href="|/trickCenter?name=*{name}|">Trick Center</a>
     </div>
 </header>
+
+<footer th:fragment="footer">
+    <p>&#9400; 2018 Mihály Barczi</p>
+</footer>
 </body>
 </html>

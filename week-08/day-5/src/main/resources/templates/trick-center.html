@@ -2,13 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Trick Center</title>
+    <title>Programmer Fox Club</title>
     <link rel="stylesheet" th:href="@{css/styles.css}"/>
 </head>
 <body th:object="${fox}">
 <header th:replace="base :: header"></header>
 <div>
-    <h1 th:text="|Welcome to *{name}'s Trick Center!|"></h1>
+    <h2 th:text="|Welcome to *{name}'s Trick Center!|"></h2>
 </div>
 <div>
     <form method="post" action="/trickCenter">
@@ -19,10 +19,11 @@
             </select>
         </div>
         <div>
-            <input type="submit" value="SUBMIT TRICKS">
+            <input type="submit" value="Add trick">
             <input type="hidden" name="name" th:value="*{name}">
         </div>
     </form>
 </div>
+<footer th:replace="base :: footer"></footer>
 </body>
 </html>

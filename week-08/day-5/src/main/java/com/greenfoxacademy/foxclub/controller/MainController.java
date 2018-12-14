@@ -18,7 +18,7 @@ public class MainController {
   FoxService foxService;
 
   @GetMapping("/")
-  public String index(@RequestParam(value = "name", required = false) String petName, Model model) {
+  public String index(Model model, @RequestParam(value = "name", required = false) String petName) {
     if (petName == null) {
       return "redirect:/login";
     }
