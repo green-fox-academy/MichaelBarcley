@@ -14,8 +14,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 public class MainController {
 
+  private FoxService foxService;
+
   @Autowired
-  FoxService foxService;
+  public MainController(FoxService foxService) {
+    this.foxService = foxService;
+  }
 
   @GetMapping("/")
   public String index(Model model, @RequestParam(value = "name", required = false) String petName) {

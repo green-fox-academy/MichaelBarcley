@@ -17,9 +17,9 @@
         ?'Currently living on only dirt :(. He knows ' + *{tricks.size()} + ' tricks.'
         :'Currently living on ' + *{food} + ' and ' + *{drink} + '. He knows ' + *{tricks.size()} + ' tricks.'"></p>
     </div>
-    <div id="tricks" th:object="${fox}">
+    <div class="tricks" th:object="${fox}">
         <h2>Known tricks</h2>
-        <p th:if="*{tricks.size()} == 0">You know no tricks yet. Go and learn some.</p>
+        <p th:if="*{tricks.size()} == 0">You don't know any tricks so far.</p>
         <ul th:unless="*{tricks.size()} == 0">
             <li th:each="trick : *{getTricks()}" th:text="${trick}"></li>
         </ul>

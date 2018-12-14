@@ -19,8 +19,12 @@ public class NutritionController {
   private List<String> foods = Arrays.asList("pizza", "mice", "salad", "kakaós csiga");
   private List<String> drinks = Arrays.asList("whiskey", "water", "beer", "orange juice");
 
+  private FoxService foxService;
+
   @Autowired
-  FoxService foxService;
+  public NutritionController(FoxService foxService) {
+    this.foxService = foxService;
+  }
 
   @GetMapping("/nutritionStore")
   public String showNutritionStore(@RequestParam("name") String petName, Model model) {

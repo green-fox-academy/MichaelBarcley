@@ -16,10 +16,14 @@ import java.util.List;
 @Controller
 public class TrickController {
 
-  private List<String> tricks = Arrays.asList("code in Java", "code in C#");
+  private List<String> tricks = Arrays.asList("code in Java", "code in C#", "do barrelrolls", "curse thymeleaf loudly");
+
+  private FoxService foxService;
 
   @Autowired
-  FoxService foxService;
+  public TrickController(FoxService foxService) {
+    this.foxService = foxService;
+  }
 
   @GetMapping("/trickCenter")
   public String showTrickCenter(@RequestParam("name") String petName, Model model) {
