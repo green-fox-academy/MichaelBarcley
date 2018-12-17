@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>H2 Database testing</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<header th:replace="base :: template">
+</header>
+<form method="post" th:action="@{/addtodo}" th:object="${todo}">
+    <div>
+        <label for="title">Name of task: </label>
+        <input id="title" name="title" th:field="*{title}"><br>
+    </div>
+    <div>
+        <label for="urgent">Is it urgent?</label>
+        <input id="urgent" type="checkbox" th:field="*{urgent}">
+    </div>
+    <button>Add task</button>
+</form>
+</body>
+</html>

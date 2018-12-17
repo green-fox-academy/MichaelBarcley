@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>H2 Database testing</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<header th:replace="base :: template"></header>
+<h1>Todos for today:</h1>
+<table>
+    <thead>
+    <tr>
+        <td>Id</td>
+        <td>Action</td>
+        <td>Done</td>
+        <td>Urgent</td>
+    </tr>
+    </thead>
+    <tbody>
+    <th:block th:each="todo : ${listOfTodos}">
+        <tr>
+            <td th:text="${todo.getId()}"></td>
+            <td th:text="${todo.getTitle()}"></td>
+            <td th:text="${todo.isDone()}"></td>
+            <td th:text="${todo.isUrgent()}"></td>
+            <td><a th:href="'/' + ${todo.getId() + '/delete'}">delete</a></td>
+        </tr>
+    </th:block>
+    </tbody>
+</table>
+</body>
+</html>
