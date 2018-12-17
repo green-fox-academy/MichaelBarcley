@@ -48,6 +48,6 @@ public class TodoServiceImpl implements TodoService {
 
   @Override
   public Todo getTodoById(long id) {
-    return null;
+    return this.repository.findById(id).orElse(null);
   }
 }
