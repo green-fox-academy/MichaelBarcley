@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>H2 Database testing</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<h1>Todos for today:</h1>
+<div th:each="todo : ${listOfTodos}">
+    <p th:text="${todo.getId()} + '. ' + ${todo.getTitle()} + ', Urgent:' + ${todo.isUrgent()}"></p>
+</div>
+</body>
+</html>
