@@ -3,10 +3,13 @@
 <head>
     <title>H2 Database testing</title>
     <meta charset="utf-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
-<header th:replace="base :: template">
-</header>
+<div class="container">
+<div th:replace="base :: template">
+</div>
 <form method="post" th:action="@{/addtodo}" th:object="${todo}">
     <div>
         <label for="title">Name of task: </label>
@@ -18,5 +21,8 @@
     </div>
     <button>Add task</button>
 </form>
+</div>
+<script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 </body>
 </html>

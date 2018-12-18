@@ -3,12 +3,30 @@
 <head>
     <title>H2 Database testing</title>
     <meta charset="utf-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
-<header th:fragment="template">
-    <a href="/">Show all Todos</a>
-    <a href="/?isActive=true">Show active Todos</a>
-    <a href="/addtodo">Add task</a>
-</header>
+<div th:fragment="template">
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary" style="margin: 5px 0px">
+    <a class="navbar-brand" href="/">My miracolous Todo App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/?isActive=true">Show active tasks</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/addtodo">Add new task</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+    <div style="margin: 75px 0"></div>
+</div>
+<script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 </body>
 </html>

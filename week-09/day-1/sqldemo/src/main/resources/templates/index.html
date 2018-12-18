@@ -3,39 +3,58 @@
 <head>
     <title>H2 Database testing</title>
     <meta charset="utf-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-<header th:replace="base :: template"></header>
-<h1>Todos for today:</h1>
-<table>
-    <thead>
-    <tr>
-        <td>Id</td>
-        <td>Action</td>
-        <td>Done</td>
-        <td>Urgent</td>
-    </tr>
-    </thead>
-    <tbody>
-    <th:block th:each="todo : ${listOfTodos}">
+<div class="container">
+    <div th:replace="base :: template"></div>
+    <h1 style="text-transform: uppercase; text-align: center">Todos for today:</h1>
+    <table class="table table-hover">
+        <thead style="text-transform: uppercase; font-weight: bold">
         <tr>
-            <td th:text="${todo.getId()}"></td>
-            <td th:text="${todo.getTitle()}"></td>
-            <td th:text="${todo.isDone()}"></td>
-            <td th:text="${todo.isUrgent()}"></td>
-            <td>
-                <form th:action="@{/{id}/edit(id=*{todo.id})}" method="get">
-                    <button type="submit">edit</button>
-                </form>
-            </td>
-            <td>
-                <form th:action="@{/{id}/delete(id=*{todo.id})}" method="post">
-                    <button type="submit">delete</button>
-                </form>
-            </td>
+            <td scope="col">Id</td>
+            <td scope="col">Action</td>
+            <td scope="col">Done</td>
+            <td scope="col">Urgent</td>
+            <td scope="col"></td>
+            <td scope="col"></td>
         </tr>
-    </th:block>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+        <th:block th:each="todo : ${listOfTodos}">
+            <tr>
+                <td class="align-middle" th:text="${todo.getId()}"></td>
+                <td class="align-middle" th:text="${todo.getTitle()}"></td>
+                <td class="align-middle" th:if="${todo.isDone()}">
+                    <i class="material-icons">check_circle</i>
+                </td>
+                <td class="align-middle" th:unless="${todo.isDone()}">
+                    <i class="material-icons">do_not_disturb_on</i>
+                </td>
+                <td class="align-middle" th:if="${todo.isUrgent()}">
+                    <i class="material-icons">add_circle</i>
+                </td>
+                <td class="align-middle" th:unless="${todo.isUrgent()}">
+                    <i class="material-icons">do_not_disturb_on</i>
+                </td>
+                <td>
+                    <form th:action="@{/{id}/edit(id=*{todo.id})}" method="get">
+                        <button type="submit" class="btn btn-primary">edit</button>
+                    </form>
+                </td>
+                <td>
+                    <form th:action="@{/{id}/delete(id=*{todo.id})}" method="post">
+                        <button type="submit" class="btn btn-danger">delete</button>
+                    </form>
+                </td>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+</div>
+<script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 </body>
 </html>
