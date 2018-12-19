@@ -56,4 +56,10 @@ public class TodoController {
     todoService.saveNewTodo(todo);
     return "redirect:/";
   }
+
+  @GetMapping("/search")
+  public String listItemsMatchingSearch(Model model, @RequestParam("searchTodo")String searchTodo) {
+    model.addAttribute("listOfTodos", todoService.getAllTasksContainingInput(searchTodo));
+    return "index";
+  }
 }

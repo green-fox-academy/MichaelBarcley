@@ -21,12 +21,7 @@ public class TodoServiceImpl implements TodoService {
 
   @Override
   public List<Todo> getActiveTodos() {
-    List<Todo> originalTaskList = new ArrayList<>();
-    this.repository.findAll().forEach(originalTaskList::add);
-    List<Todo> filteredTaskList = originalTaskList.stream()
-        .filter(Todo -> !Todo.isDone())
-        .collect(Collectors.toList());
-    return filteredTaskList;
+    return this.repository.findAllByDoneIsFalse();
   }
 
   @Override
@@ -49,5 +44,10 @@ public class TodoServiceImpl implements TodoService {
   @Override
   public Todo getTodoById(long id) {
     return this.repository.findById(id).orElse(null);
+  }
+
+  @Override
+  public List<Todo> getAllTasksContainingInput(String searchTodo) {
+    return this.repository.findAllByTitleContaining(searchTodo);
   }
 }

@@ -8,12 +8,12 @@
 </head>
 <body>
 <div th:fragment="template">
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary" style="margin: 5px 0px">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="margin: 5px 0px 15px">
     <a class="navbar-brand" href="/">My miracolous Todo App</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarText">
+    <div class="navbar-brand" id="navbarText">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a class="nav-link" href="/?isActive=true">Show active tasks</a>
@@ -24,8 +24,6 @@
         </ul>
     </div>
 </nav>
-    <div style="margin: 75px 0"></div>
-</div>
 <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
 <script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 </body>
