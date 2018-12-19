@@ -86,4 +86,16 @@ public class TodoController {
     assigneeService.saveNewAssignee(assignee);
     return "redirect:/assignees";
   }
+
+  @GetMapping("/assignees/addmember")
+  public String addAssigneePage(Model model) {
+    model.addAttribute("assignee", new Assignee());
+    return "addassignee";
+  }
+
+  @PostMapping("/assignees/addmember")
+  public String addAssignee(@ModelAttribute Assignee assignee) {
+    assigneeService.saveNewAssignee(assignee);
+    return "redirect:/assignees";
+  }
 }
