@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>H2 Database testing</title>
+    <title>My ToDo App</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -14,6 +14,12 @@
     <div>
         <label for="title">Name of task: </label>
         <input id="title" name="title" th:field="*{title}"><br>
+    </div>
+    <div>
+        <label for="assignee">Who is reponsible for this task? </label>
+        <select id="assignee" name="assignee">
+            <option th:each="assignee : ${assignee}" th:utext="${assignee.getName()}" th:value="${assignee.getId()}"></option>
+        </select>
     </div>
     <div>
         <label for="urgent">Is it urgent?</label>

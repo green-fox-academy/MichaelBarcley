@@ -1,6 +1,8 @@
 package com.gfa.sqldemo.controller;
 
+import com.gfa.sqldemo.model.Assignee;
 import com.gfa.sqldemo.model.Todo;
+import com.gfa.sqldemo.service.AssigneeServiceImpl;
 import com.gfa.sqldemo.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,10 +13,12 @@ import org.springframework.web.bind.annotation.*;
 public class TodoController {
 
   TodoService todoService;
+  AssigneeServiceImpl assigneeService;
 
   @Autowired
-  public TodoController(TodoService todoService) {
+  public TodoController(TodoService todoService, AssigneeServiceImpl assigneeService) {
     this.todoService = todoService;
+    this.assigneeService = assigneeService;
   }
 
   @GetMapping("/")
@@ -30,6 +34,7 @@ public class TodoController {
   @GetMapping("/addtodo")
   public String addItemPage(Model model) {
     model.addAttribute("todo", new Todo());
+    model.addAttribute("assignee", assigneeService.getAllAssignee());
     return "addtodo";
   }
 
@@ -48,6 +53,7 @@ public class TodoController {
   @GetMapping(value = "/{id}/edit")
   public String editItemPage(Model model, @PathVariable long id) {
     model.addAttribute("todo", todoService.getTodoById(id));
+    model.addAttribute("assignee", assigneeService.getAllAssignee());
     return "edittodo";
   }
 
@@ -61,5 +67,23 @@ public class TodoController {
   public String listItemsMatchingSearch(Model model, @RequestParam("searchTodo")String searchTodo) {
     model.addAttribute("listOfTodos", todoService.getAllTasksContainingInput(searchTodo));
     return "index";
+  }
+
+  @GetMapping("/assignees")
+  public String listAssignees (Model model) {
+    model.addAttribute("assignees", assigneeService.getAllAssignee());
+    return "assignees";
+  }
+
+  @GetMapping(value = "/assignees/{id}/edit")
+  public String editAssigneePage(Model model, @PathVariable long id) {
+    model.addAttribute("assignee", assigneeService.getAssigneeById(id));
+    return "editassignee";
+  }
+
+  @PostMapping(value = "/assignees/{id}/edit")
+  public String editAssignee(@ModelAttribute Assignee assignee) {
+    assigneeService.saveNewAssignee(assignee);
+    return "redirect:/assignees";
   }
 }

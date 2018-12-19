@@ -1,6 +1,8 @@
 package com.gfa.sqldemo;
 
+import com.gfa.sqldemo.model.Assignee;
 import com.gfa.sqldemo.model.Todo;
+import com.gfa.sqldemo.repository.AssigneeRepository;
 import com.gfa.sqldemo.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -10,11 +12,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SqldemoApplication implements CommandLineRunner {
 
-  TodoRepository repository;
+  TodoRepository todoRepository;
+  AssigneeRepository assigneeRepository;
 
   @Autowired
-  SqldemoApplication (TodoRepository repository) {
-    this.repository = repository;
+  SqldemoApplication (TodoRepository todoRepository, AssigneeRepository assigneeRepository) {
+    this.todoRepository = todoRepository;
+    this.assigneeRepository = assigneeRepository;
   }
 
   public static void main(String[] args) {

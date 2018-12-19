@@ -10,27 +10,21 @@
 <div class="container">
     <div th:replace="base :: template">
     </div>
-    <form method="post" th:action="@{/addtodo}" th:object="${todo}">
+    <form method="post" th:object="${assignee}" th:action="@{/assignees/{id}/edit(id=${assignee.id})}">
         <div>
-            <label for="title">Name of task: </label>
-            <input id="title" name="title" th:field="*{title}"><br>
+            <label for="name">Name of assignee: </label>
+            <input id="name" name="name" th:field="*{name}"><br>
         </div>
 
         <div>
-            <label for="assignee">Who is reponsible for this task? </label>
-            <select id="assignee" name="assignee">
-                <option th:each="assignee : ${assignee}" th:utext="${assignee.getName()}" th:value="${assignee.getId()}"></option>
-            </select>
+            <label for="email">Name of assignee: </label>
+            <input id="email" name="email" th:field="*{email}"><br>
         </div>
-
-        <div>
-            <label for="urgent">Is it urgent?</label>
-            <input id="urgent" type="checkbox" th:field="*{urgent}">
-        </div>
-        <button>Add task</button>
+        <button>Edit information of assignee</button>
     </form>
 </div>
 <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
 <script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 </body>
 </html>
+

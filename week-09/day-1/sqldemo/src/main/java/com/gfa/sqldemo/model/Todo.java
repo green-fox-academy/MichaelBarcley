@@ -1,9 +1,7 @@
 package com.gfa.sqldemo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class Todo {
@@ -12,12 +10,21 @@ public class Todo {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
 
+  @Temporal(TemporalType.TIMESTAMP)
+  private Date creationDate;
+
   private String title;
+
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "assigneeId")
+  private Assignee assignee;
+
   private boolean urgent;
   private boolean done;
 
-  public Todo(String title) {
+  public Todo(String title, Assignee assignee) {
     this.title = title;
+    this.assignee = assignee;
     this.urgent = false;
     this.done = false;
   }
@@ -55,5 +62,21 @@ public class Todo {
 
   public void setDone(boolean done) {
     this.done = done;
+  }
+
+  public Date getCreationDate() {
+    return creationDate;
+  }
+
+  public void setCreationDate(Date creationDate) {
+    this.creationDate = creationDate;
+  }
+
+  public Assignee getAssignee() {
+    return assignee;
+  }
+
+  public void setAssignee(Assignee assignee) {
+    this.assignee = assignee;
   }
 }
