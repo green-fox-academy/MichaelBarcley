@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: white;
+}
+
+.header {
+    width: 100%;
+    background-size: cover;
+    background-image: url('./images/tiptopbanner_mini.jpg');
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.navbar {
+    display: flex;
+    padding: 10px 30px;
+    background-color: rgb(70, 70, 70);
+  }
+  .navbar a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+  }
+
+.container {
+    background-color: #eee;
+}
+
+.flexgrid {
+    margin: 0px 30px;
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .flexgrid .colmain {   
+    width: 75%;
+  }
+  .flexgrid .colinfo {
+    width: 25%;
+    background-color: white;
+    border-radius: 15px;
+    margin: 0 50px 100px;
+  }
+
+.post {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 14px;
+    color: grey;
+    display: flex;
+    background-color: white;
+    margin: 0 0 10px;
+    padding: 10px 10px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+
+.post:hover {
+    background-color: rgb(250, 250, 250);
+}
+
+.postbuttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 5px;
+    padding-right: 20px;
+}
+
+.info {
+    margin: 20px;
+}
+
+.about {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.abouttext {
+    text-align: justify;
+}
+
+.usefullinks {
+    margin-top: 20px;
+}
+
+.topics {
+    margin: 10px 30px;
+}
