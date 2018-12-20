@@ -5,15 +5,11 @@
 
 body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background-color: white;
+    background-color: #eee;
 }
 
 .header {
     width: 100%;
-    background-size: cover;
-    background-image: url('./images/tiptopbanner_mini.jpg');
-    background-repeat: no-repeat;
-    margin: 0 auto;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -30,10 +26,6 @@ body {
     text-decoration: none;
     color: white;
   }
-
-.container {
-    background-color: #eee;
-}
 
 .flexgrid {
     margin: 0px 30px;
@@ -95,4 +87,18 @@ body {
 
 .topics {
     margin: 10px 30px;
+}
+
+.editpost {
+    text-align: center;
+    padding: 10px 0 20px;
+}
+
+.editpost input {
+    margin: 10px;
+}
+
+.editpost button {
+    padding: 3px;
+    margin: 5px;
 }
