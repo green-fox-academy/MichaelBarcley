@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TipTop Official Reddit</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+</head>
+<body>
+<div class="header">
+    <img src="./images/logo.jpg" />
+</div>
+<div class="navbar">
+    <a href="/">Home</a>
+    <a href="/top">Top posts</a>
+    <a href="/submit">Submit new post</a>
+</div>
+<div class="container">
+    <form class="editpost" th:object="${post}" method="post" action="/submit">
+        <div>
+            <label for="title">Title of the post:</label>
+            <input id="title" type="text" name="title" th:value="*{title}">
+        </div>
+        <div>
+            <label for="url">URL of the post:</label>
+            <input id="url" type="text" name="url" th:value="*{url}">
+        </div>
+        <button type="submit">Submit</button>
+        <button type="reset">Cancel</button>
+    </form>
+</div>
+</body>
+</html>

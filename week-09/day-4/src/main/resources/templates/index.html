@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TipTop Official Reddit</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+</head>
+<body>
+<div class="header">
+    <img src="./images/logo.jpg" />
+</div>
+<div class="navbar">
+    <a href="/">Home</a>
+    <a href="/top">Top posts</a>
+    <a href="/submit">Submit new post</a>
+</div>
+<div class="container">
+    <div class="flexgrid">
+        <div class="colmain">
+            <th:block th:object="${post}" th:each="post : ${posts}">
+                <div class="post">
+                    <div class="postbuttons">
+                        <a th:href="@{/{id}/upvote(id=*{postId})}"><img src="./images/upvote.png"></a>
+                        <h2 th:text="*{vote}"></h2>
+                        <a th:href="@{/{id}/downvote(id=*{postId})}"><img src="./images/downvote.png"></a>
+                    </div>
+                    <div class="posttext">
+                        <h1><a th:text="*{title}" th:href="*{url}"></a></h1>
+                        <a class="source" th:href="*{url}" th:text="'(' + ${#strings.substringBefore(post.url, '/')} + ')'"> (greenfoxacademy.com)</a><br>
+                        <span class="submdate" th:text="*{timeSinceCreation} + ' by'"></span>
+                        <a class="submitter" href="http://gfa.com">Anonymus</a><br>
+                        <span class="num_comments">61 comments </span>
+                        <a class="modify" th:href="@{/{id}/edit(id=*{postId})}">modify</a>
+                        <a class="remove" th:href="@{/{id}/delete(id=*{postId})}">remove</a>
+                    </div>
+                </div>
+            </th:block>
+        </div>
+        <div class="colinfo">
+            <div class="info">
+                <div class="about">
+                    <p>About r/TipTop</p>
+                </div>
+                <div class="abouttext">
+                    <p>TipTop is the Java class in the Rueppellii Cohort at Green Fox Academy. We are an awesome
+                        team, where each member becomes a better software developer every day.</p>
+                </div>
+                <div class="usefullinks">
+                    <p>Useful links:</p>
+                </div>
+                <div class="topics">
+                    <ul>
+                        <li><a href="https://github.com/green-fox-academy/definitions">Green Fox Academy
+                            definitions</a></li>
+                        <li><a href="https://github.com/green-fox-academy/tiptop-syllabus">Our GitHub syllabus</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

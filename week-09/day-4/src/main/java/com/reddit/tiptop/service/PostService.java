@@ -9,6 +9,7 @@ public interface PostService {
   Post getPostById(long id);
   void addPost(Post post);
   void editPost(Post post);
+  void editVoteByIdUp(Post post);
+  void editVoteByIdDown(Post post);
   void deletePostById(long id);
-
 }
