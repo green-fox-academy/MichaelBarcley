@@ -1,15 +1,21 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Basics
+
 {
     class HelloCSharp
     {
-        static void Main(string[] args)
+        public static void Exercise()
         {
+            Console.WriteLine("Mike testing C#: Class 1- The basics");
             Console.WriteLine("Hello C#!");
             Console.WriteLine("The mentors said that \"C# is awesome\". \n");
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 4; i++)
             {
                 Console.WriteLine(i);
             }
@@ -36,8 +42,6 @@ namespace Basics
                 }
                 Console.WriteLine("");
             }
-
-            Console.Read();
         }
     }
 }
