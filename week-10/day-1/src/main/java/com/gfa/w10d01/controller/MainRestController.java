@@ -1,7 +1,10 @@
 package com.gfa.w10d01.controller;
 
 import com.gfa.w10d01.model.Doubling;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -44,5 +47,17 @@ public class MainRestController {
       greeter.put("welcome_message", String.format("Oh, hi there %s, my dear %s!", name, title));
       return greeter;
     }
+  }
+
+  @GetMapping("/appenda")
+  public Object appendaRoot() {
+    return new ResponseEntity(HttpStatus.NOT_FOUND);
+  }
+
+  @GetMapping("/appenda/{appendthis}")
+  public Object appendA(@PathVariable String appendthis) {
+    HashMap<String, String> appendWithA = new HashMap<>();
+    appendWithA.put("appended", appendthis + "a");
+    return appendWithA;
   }
 }
