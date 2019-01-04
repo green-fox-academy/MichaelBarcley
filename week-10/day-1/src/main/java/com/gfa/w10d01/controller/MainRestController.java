@@ -18,9 +18,31 @@ public class MainRestController {
       doubling.doDoubling();
       return doubling;
     } else {
-      HashMap<String, String> hashy = new HashMap();
-      hashy.put("error", "Provide an input!");
-      return hashy;
+      HashMap<String, String> error = new HashMap<>();
+      error.put("error", "Provide an input!");
+      return error;
+    }
+  }
+
+  @GetMapping("/greeting")
+  public Object greeting(@RequestParam(value = "name", required = false) String name,
+                         @RequestParam(value = "title", required = false) String title) {
+    if (name == null && title == null) {
+      HashMap<String, String> error = new HashMap<>();
+      error.put("error", "Please provide both a name and a title.");
+      return error;
+    } else if (name != null && title == null) {
+      HashMap<String, String> error = new HashMap<>();
+      error.put("error", "Please provide a title!");
+      return error;
+    } else if (name == null && title != null) {
+      HashMap<String, String> error = new HashMap<>();
+      error.put("error", "Please provide a name!");
+      return error;
+    } else {
+      HashMap<String, String> greeter = new HashMap<>();
+      greeter.put("welcome_message", String.format("Oh, hi there %s, my dear %s!", name, title));
+      return greeter;
     }
   }
 }
