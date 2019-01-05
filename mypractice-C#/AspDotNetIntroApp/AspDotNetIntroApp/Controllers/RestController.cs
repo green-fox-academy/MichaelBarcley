@@ -13,10 +13,16 @@ namespace AspDotNetIntroApp.Controllers
         static int counter;
 
         [HttpGet("greeting")]
-        public Greeting Greet()
+        public Greeting Greet(String name)
         {
             counter++;
-            return new Greeting(counter, "Hello buddy!");
+            if (name == null)
+            {
+                return new Greeting(counter, "Hello User!");
+            } else
+            {
+            return new Greeting(counter, "Hello " + name + "!");
+            }
         }
     }
 }
