@@ -19,9 +19,10 @@ namespace AspDotNetIntroApp.Controllers
             if (name == null)
             {
                 return new Greeting(counter, "Hello User!");
-            } else
+            }
+            else
             {
-            return new Greeting(counter, "Hello " + name + "!");
+                return new Greeting(counter, "Hello " + name + "!");
             }
         }
     }
