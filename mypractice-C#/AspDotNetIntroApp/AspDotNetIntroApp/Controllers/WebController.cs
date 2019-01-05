@@ -10,14 +10,22 @@ namespace AspDotNetIntroApp.Controllers
     [Route("web")]
     public class WebController : Controller
     {
+        static int counter;
+
         [HttpGet("greeting")]
-        public IActionResult Greeting()
+        public IActionResult Greeting(String name)
         {
+            counter++;
+
             var greeting = new Greeting()
             {
-                Id = 1,
-                Content = "from the model"
+                Id = counter,
+                Content = name
             };
+            if (name == null)
+            {
+                greeting.Content = "dear User";
+            }
 
             return View(greeting);
         }
