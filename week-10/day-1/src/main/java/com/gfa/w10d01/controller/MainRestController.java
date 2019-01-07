@@ -1,12 +1,11 @@
 package com.gfa.w10d01.controller;
 
+import com.gfa.w10d01.model.DoUntil;
 import com.gfa.w10d01.model.Doubling;
+import com.gfa.w10d01.model.Until;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 
@@ -59,5 +58,22 @@ public class MainRestController {
     HashMap<String, String> appendWithA = new HashMap<>();
     appendWithA.put("appended", appendthis + "a");
     return appendWithA;
+  }
+
+  @PostMapping("/dountil/{action}")
+  public Object doUntil(@PathVariable String action, @RequestBody Until until) {
+    if (action.equals("sum")) {
+      DoUntil sumUntil = new DoUntil();
+      sumUntil.sum(until);
+      return sumUntil;
+    } else if (action.equals("factor")) {
+      DoUntil factUntil = new DoUntil();
+      factUntil.factorial(until);
+      return factUntil;
+    } else {
+      HashMap<String, String> error = new HashMap<>();
+      error.put("error", "Please provide a number!");
+      return error;
+    }
   }
 }
