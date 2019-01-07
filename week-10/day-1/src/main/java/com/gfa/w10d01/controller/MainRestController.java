@@ -128,7 +128,7 @@ public class MainRestController {
 
   @GetMapping("/log")
   public Object getLogs() {
-    EntryLog log = new EntryLog();
+    EntryOutput log = new EntryOutput();
     log.setValues(entryService.listEntries());
     return log;
   }

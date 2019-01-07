@@ -1,36 +1,41 @@
 package com.gfa.w10d01.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class EntryLog {
-  List<Entry> entries;
-  int entry_count;
+
+  private long id;
+  private String endPoint;
+  private String data;
 
   public EntryLog() {
   }
 
-  public List<Entry> getEntries() {
-    return entries;
+  public EntryLog(long id, String endPoint, String data) {
+    this.id = id;
+    this.endPoint = endPoint;
+    this.data = data;
   }
 
-  public void setEntries(List<Entry> entries) {
-    this.entries = entries;
+  public long getId() {
+    return id;
   }
 
-  public int getEntry_count() {
-    return entry_count;
+  public void setId(long id) {
+    this.id = id;
   }
 
-  public void setEntry_count(int entry_count) {
-    this.entry_count = entry_count;
+  public String getEndPoint() {
+    return endPoint;
   }
 
-  public void setValues(List<Entry> entryList) {
-    entries = new ArrayList<>();
-    for (Entry entry: entryList) {
-      entries.add(entry);
-    }
-    this.setEntry_count(entryList.size());
+  public void setEndPoint(String endPoint) {
+    this.endPoint = endPoint;
+  }
+
+  public String getData() {
+    return data;
+  }
+
+  public void setData(String data) {
+    this.data = data;
   }
 }
