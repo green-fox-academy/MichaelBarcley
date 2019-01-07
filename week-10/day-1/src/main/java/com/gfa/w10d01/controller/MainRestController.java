@@ -1,5 +1,6 @@
 package com.gfa.w10d01.controller;
 
+import com.gfa.w10d01.model.ArrayHandler;
 import com.gfa.w10d01.model.DoUntil;
 import com.gfa.w10d01.model.Doubling;
 import com.gfa.w10d01.model.Until;
@@ -73,6 +74,30 @@ public class MainRestController {
     } else {
       HashMap<String, String> error = new HashMap<>();
       error.put("error", "Please provide a number!");
+      return error;
+    }
+  }
+
+  @PostMapping("/arrays")
+  public Object arrayHandler(@RequestBody ArrayHandler arrayHandler) {
+    if (arrayHandler.getWhat().equals("sum")) {
+      arrayHandler.setResult(arrayHandler.sum());
+      HashMap<String, Object> result = new HashMap<>();
+      result.put("result", arrayHandler.getResult());
+      return result;
+    } else if (arrayHandler.getWhat().equals("multiply")) {
+      arrayHandler.setResult(arrayHandler.multiply());
+      HashMap<String, Object> result = new HashMap<>();
+      result.put("result", arrayHandler.getResult());
+      return result;
+    } else if (arrayHandler.getWhat().equals("double")) {
+      arrayHandler.setResult(arrayHandler.doubleNumbers());
+      HashMap<String, Object> result = new HashMap<>();
+      result.put("result", arrayHandler.getResult());
+      return result;
+    } else {
+      HashMap<String, String> error = new HashMap<>();
+      error.put("error", "Please make sure you provided both the operation and the numbers!");
       return error;
     }
   }
