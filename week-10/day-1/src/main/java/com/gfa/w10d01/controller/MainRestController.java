@@ -132,4 +132,20 @@ public class MainRestController {
     log.setValues(entryService.listEntries());
     return log;
   }
+
+  @PostMapping("/sith")
+  public Object sithReverser(@RequestBody SithReverser sithReverser) {
+    String reversed = "";
+    String[] sentences = sithReverser.getText().split("[.]");
+    for (int i = 0; i < sentences.length; i++) {
+      String[] words = sentences[i].split(" ");
+      for (int j = 1; j < words.length; j = j + 2) {
+        reversed += words[j] + " " + words[j - 1];
+      }
+      reversed += ". ";
+    }
+    HashMap<String, String> result = new HashMap<>();
+    result.put("sith_text", reversed);
+    return result;
+  }
 }
