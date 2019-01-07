@@ -1,20 +1,19 @@
 package com.gfa.w10d01.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class EntryOutput {
-  List<EntryLog> entries;
+  List<Entry> entries;
   int entry_count;
 
   public EntryOutput() {
   }
 
-  public List<EntryLog> getEntries() {
+  public List<Entry> getEntries() {
     return entries;
   }
 
-  public void setEntries(List<EntryLog> entries) {
+  public void setEntries(List<Entry> entries) {
     this.entries = entries;
   }
 
@@ -27,10 +26,7 @@ public class EntryOutput {
   }
 
   public void setValues(List<Entry> entryList) {
-    entries = new ArrayList<>();
-    for (Entry entry: entryList) {
-      entries.add(new EntryLog(entry.getId(), entry.getEndPoint(), entry.getData()));
-    }
+    entries = entryList;
     this.setEntry_count(entryList.size());
   }
 }

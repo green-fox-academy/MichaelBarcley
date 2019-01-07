@@ -1,5 +1,7 @@
 package com.gfa.w10d01.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -10,6 +12,7 @@ public class Entry {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
 
+  @JsonIgnore
   @Temporal(TemporalType.TIMESTAMP)
   private Date date;
 
