@@ -13,11 +13,11 @@ namespace AspDotNetIntroApp.Controllers
         static int counter;
 
         [HttpGet("greeting")]
-        public IActionResult Greeting(String name)
+        public IActionResult Greeting(string name)
         {
             counter++;
 
-            var greeting = new Greeting()
+            Greeting greeting = new Greeting()
             {
                 Id = counter,
                 Content = name
