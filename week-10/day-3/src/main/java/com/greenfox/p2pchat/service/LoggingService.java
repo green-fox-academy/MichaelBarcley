@@ -1,16 +1,16 @@
 package com.greenfox.p2pchat.service;
 
-import lombok.Getter;
-import lombok.Setter;
-
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import java.util.Date;
 
-@Getter
-@Setter
 public class LoggingService {
   private String path;
   private String method;
+
+  @Temporal(TemporalType.TIMESTAMP)
   private Date date;
+
   private String logLevel;
   private String requestData;
 
@@ -23,5 +23,53 @@ public class LoggingService {
     this.logLevel = logLevel;
     this.requestData = requestData;
     date = new Date();
+  }
+
+  public String getPath() {
+    return path;
+  }
+
+  public void setPath(String path) {
+    this.path = path;
+  }
+
+  public String getMethod() {
+    return method;
+  }
+
+  public void setMethod(String method) {
+    this.method = method;
+  }
+
+  public Date getDate() {
+    return date;
+  }
+
+  public void setDate(Date date) {
+    this.date = date;
+  }
+
+  public String getLogLevel() {
+    return logLevel;
+  }
+
+  public void setLogLevel(String logLevel) {
+    this.logLevel = logLevel;
+  }
+
+  public String getRequestData() {
+    return requestData;
+  }
+
+  public void setRequestData(String requestData) {
+    this.requestData = requestData;
+  }
+
+  public void soutLog() {
+    if (this.logLevel.equals("INFO")) {
+      System.out.println(date + " " + logLevel + " Request " + path + " " + method + " " + requestData);
+    } else {
+      System.err.println(date + " " + logLevel + " " + path + " " + method + " " + requestData);
+    }
   }
 }

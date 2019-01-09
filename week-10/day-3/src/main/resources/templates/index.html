@@ -9,9 +9,9 @@
 <body>
 <div class="container">
     <h1>Peer to Peer Chat program</h1>
-    <form>
+    <form class="updateuser" th:object="${user}" th:method="p" method="post" action="/update-user">
         <label for="name">Your username:</label>
-        <input id="name" type="text">
+        <input id="name" type="text" name="name" th:value="*{name}">
         <button type="submit">Update</button>
     </form>
 

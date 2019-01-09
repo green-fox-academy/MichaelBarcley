@@ -25,7 +25,7 @@ public class MessageServiceImpl implements MessageService {
   @Override
   public void addMessage(Message message) {
     message.setTimeStamp(new Date());
-    message.setUsername("MichaelBarcley");
+//    message.setUsername("MichaelBarcley");
     this.messageRepository.save(message);
   }
 }
