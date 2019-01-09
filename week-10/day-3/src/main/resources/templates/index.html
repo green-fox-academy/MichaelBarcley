@@ -14,6 +14,12 @@
         <input id="name" type="text" name="name" th:value="*{name}">
         <button type="submit">Update</button>
     </form>
+    <ul>
+        <li>
+            <div>App</div>
+            <div>Hi there! Submit your message using the send button!</div>
+        </li>
+    </ul>
 
     <th:block th:object="${message}" th:each="message : ${messages}">
         <ul>
@@ -26,8 +32,9 @@
 
     <form class="addmessage" method="post" action="/">
         <input id="text" type="text" name="text" style="display: block" th:value="${newMessage.text}">
-        <button type="submit">Send</button>
+        <button type="submit" th:value="${user.name}" name="username">Send</button>
     </form>
 </div>
+<a href="/">refresh</a>
 </body>
 </html>
