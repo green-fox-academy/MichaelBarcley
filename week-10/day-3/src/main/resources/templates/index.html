@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TipTop Chat Application</title>
 </head>
 <body>
-    <p>Random text, Hello.</p>
+<div class="container">
+    <h1>Peer to Peer Chat program</h1>
+    <form>
+        <label for="name">Your username:</label>
+        <input id="name" type="text">
+        <button type="submit">Update</button>
+    </form>
+
+    <th:block th:object="${message}" th:each="message : ${messages}">
+        <ul>
+            <li>
+                <div th:text="*{username}"></div>
+                <div th:text="*{text}"></div>
+            </li>
+        </ul>
+    </th:block>
+
+    <form class="addmessage" method="post" action="/">
+        <input id="text" type="text" name="text" style="display: block" th:value="${newMessage.text}">
+        <button type="submit">Send</button>
+    </form>
+</div>
 </body>
 </html>
