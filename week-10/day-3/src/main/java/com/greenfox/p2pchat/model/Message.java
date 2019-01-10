@@ -2,7 +2,10 @@ package com.greenfox.p2pchat.model;
 
 
 import javax.persistence.*;
+import java.lang.reflect.Field;
 import java.util.Date;
+import java.util.Objects;
+import java.util.stream.Stream;
 
 @Entity
 public class Message {
@@ -51,5 +54,15 @@ public class Message {
 
   public void setUsername(String username) {
     this.username = username;
+  }
+
+  public String fieldsThatAreNull () throws IllegalAccessException {
+    String nullFields = "";
+    for (Field field: getClass().getDeclaredFields()) {
+      if (field.get(this) == null) {
+        nullFields += field.getName() + ", ";
+      }
+    }
+    return nullFields;
   }
 }
