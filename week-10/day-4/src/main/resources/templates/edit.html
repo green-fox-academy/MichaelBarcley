@@ -4,24 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Attractions</title>
 </head>
 <body>
 <div class="container">
     <h1>Best places to visit booiiizzzz</h1>
 
-    <table>
+    <table class="table table-bordered">
         <thead>
         <tr>
-            <td>Id</td>
-            <td>Name</td>
-            <td>City</td>
-            <td>Price</td>
-            <td>Longitude</td>
-            <td>Latitude</td>
-            <td>Category</td>
-            <td>Duration</td>
-            <td>Recommended Age</td>
+            <td scope="col">Id</td>
+            <td scope="col">Name</td>
+            <td scope="col">City</td>
+            <td scope="col">Price</td>
+            <td scope="col">Longitude</td>
+            <td scope="col">Latitude</td>
+            <td scope="col">Category</td>
+            <td scope="col">Duration</td>
+            <td scope="col">Recommended Age</td>
+            <td scope="col">Submitted by</td>
         </tr>
         </thead>
         <tbody>
@@ -35,6 +38,7 @@
             <td th:text="${item.category}"></td>
             <td th:text="${item.duration}"></td>
             <td th:text="${item.recommendedAge}"></td>
+            <td th:text="${item.user.name}"></td>
         </tr>
         </tbody>
     </table>
@@ -56,9 +60,23 @@
         <label for="duration">Duration</label>
         <input id="duration" type="text" name="duration" style="display: block" th:value="*{duration}" required>
         <label for="recommendedage">Recommended Age</label>
-        <input id="recommendedage" type="number" name="recommendedage" style="display: block" th:value="*{recommendedAge}" required>
+        <input id="recommendedage" type="number" name="recommendedage" style="display: block"
+               th:value="*{recommendedAge}" required>
+        <label for="user">Submitter</label>
+        <select id="user" name="user">
+            <option th:each="user : ${users}" th:utext="${user.name}" th:value="${user.id}"></option>
+        </select>
         <button type="submit">Send</button>
     </form>
 </div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,9 +1,6 @@
 package com.greenfox.attractionsexam.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Attraction {
@@ -19,6 +16,9 @@ public class Attraction {
   private String category;
   private int duration;
   private int recommendedAge;
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "submitter")
+  private User user;
 
   public Attraction() {
   }
@@ -93,5 +93,19 @@ public class Attraction {
 
   public void setRecommendedAge(int recommendedAge) {
     this.recommendedAge = recommendedAge;
+  }
+
+  public User getUser() {
+    return user;
+  }
+
+  public void setUser(User user) {
+    this.user = user;
+  }
+
+  public AttractionDto convertIntoDto() {
+    return new AttractionDto(this.id, this.name, this.city,
+        this.price, this.longitude, this.latitude,
+        this.category, this.duration, this.recommendedAge);
   }
 }
