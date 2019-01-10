@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Attractions</title>
+</head>
+<body>
+<div class="container">
+    <h1>Best places to visit booiiizzzz</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>City</td>
+            <td>Price</td>
+            <td>Longitude</td>
+            <td>Latitude</td>
+            <td>Category</td>
+            <td>Duration</td>
+            <td>Recommended Age</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item : ${allAttraction}">
+            <td th:text="${item.id}"></td>
+            <td th:text="${item.name}"></td>
+            <td th:text="${item.city}"></td>
+            <td th:text="${item.price}"></td>
+            <td th:text="${item.longitude}"></td>
+            <td th:text="${item.latitude}"></td>
+            <td th:text="${item.category}"></td>
+            <td th:text="${item.duration}"></td>
+            <td th:text="${item.recommendedAge}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+
+    <form class="addattraction" th:object="${attraction}" method="post" action="/add">
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name" style="display: block" th:value="*{name}" required>
+        <label for="city">City</label>
+        <input id="city" type="text" name="city" style="display: block" th:value="*{city}" required>
+        <label for="price">Price</label>
+        <input id="price" type="number" name="price" style="display: block" th:value="*{price}" required>
+        <label for="longitude">Longitude</label>
+        <input id="longitude" type="text" name="longitude" style="display: block" th:value="*{longitude}" required>
+        <label for="latitude">Latitude</label>
+        <input id="latitude" type="text" name="latitude" style="display: block" th:value="*{latitude}" required>
+        <label for="category">Category</label>
+        <input id="category" type="text" name="category" style="display: block" th:value="*{category}" required>
+        <label for="duration">Duration</label>
+        <input id="duration" type="text" name="duration" style="display: block" th:value="*{duration}" required>
+        <label for="recommendedage">Recommended Age</label>
+        <input id="recommendedage" type="number" name="recommendedage" style="display: block" th:value="*{recommendedAge}" required>
+        <button type="submit">Send</button>
+    </form>
+</div>
+</body>
+</html>
