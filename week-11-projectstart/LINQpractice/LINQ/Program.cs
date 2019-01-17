@@ -38,6 +38,15 @@ namespace LINQ
             }
             Console.WriteLine();
 
+            // Exercise 8
+            string[] cities = { "ROME", "LONDON", "NAIROBI", "CALIFORNIA", "ZURICH", "NEW DELHI", "AMSTERDAM", "ABU DHABI", "PARIS" };
+            var citiesWithAI = cities.Where(c => c.StartsWith("A") && c.EndsWith("I"));
+            foreach (string city in citiesWithAI)
+            {
+                Console.WriteLine(city);
+            }
+            Console.WriteLine();
+
             Console.Read();
         }
     }
