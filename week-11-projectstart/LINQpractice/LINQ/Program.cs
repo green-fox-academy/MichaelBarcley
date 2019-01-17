@@ -18,8 +18,26 @@ namespace LINQ
 
             // Exercise 2
             var averageOfOddNumbers = n.Where(s => s % 2 == 1 || s % 2 == -1).Average(a => a);
-
             Console.WriteLine(averageOfOddNumbers);
+            Console.WriteLine();
+
+            // Exercise 3
+            var squareOfPositiveNumbers = n.Where(k => k > 0).Select(m => m * m);
+            foreach (int num in squareOfPositiveNumbers)
+            {
+                Console.WriteLine(num);
+            }
+            Console.WriteLine();
+
+            // Exercise 4
+            int[] y = new[] { 3, 9, 2, 8, 6, 5 };
+            var squaredNumbersGreaterThanTwenty = y.Select(m => m * m).Where(k => k > 20);
+            foreach (int num in squaredNumbersGreaterThanTwenty)
+            {
+                Console.WriteLine(num);
+            }
+            Console.WriteLine();
+
             Console.Read();
         }
     }
