@@ -17,25 +17,26 @@ namespace TodoApi.Controllers
         public TodoController(TodoContext context)
         {
             this.context = context;
-
-            if (this.context.Todo.Count() < 2)
-            {
-                this.context.Todo.Add(new Todo { Name = "Buy milk" });
-                this.context.Todo.Add(new Todo { Name = "Go home", Description = "Tram 4-6, then M4", IsUrgent = true });
-                this.context.SaveChanges();
-            }
         }
 
         [HttpGet]
-        public List<Todo> GetAllTodoItems()
+        public ActionResult<List<Todo>> GetAllTodoItems()
         {
             return context.Todo.ToList();
         }
 
         [HttpGet("{id}")]
-        public Todo GetTodoItem(long id)
+        public ActionResult<Todo> GetTodoItem(long id)
         {
             return context.Todo.Find(id);
+        }
+
+        [HttpPost]
+        public ActionResult<Todo> CreateNewTodo(Todo todo)
+        {
+            context.Todo.Add(todo);
+            context.SaveChanges();
+            return CreatedAtAction("GetTodoItem", new { id = todo.Id }, todo);
         }
     }
 }
