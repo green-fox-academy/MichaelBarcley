@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using TodoApi.Models;
 using TodoApi.Repositories;
 
@@ -22,13 +23,13 @@ namespace TodoApi.Controllers
         [HttpGet]
         public ActionResult<List<Todo>> GetAllTodoItems()
         {
-            return context.Todo.ToList();
+            return Ok(context.Todo.ToList());
         }
 
         [HttpGet("{id}")]
         public ActionResult<Todo> GetTodoItem(long id)
         {
-            return context.Todo.Find(id);
+            return Ok(context.Todo.Find(id));
         }
 
         [HttpPost]
@@ -37,6 +38,25 @@ namespace TodoApi.Controllers
             context.Todo.Add(todo);
             context.SaveChanges();
             return CreatedAtAction("GetTodoItem", new { id = todo.Id }, todo);
+        }
+
+        [HttpPut("{id}")]
+        public ActionResult UpdateTodo(long id, Todo todo)
+        {
+            if (id != todo.Id)
+            {
+                return BadRequest();
+            }
+
+            context.Entry(todo).State = EntityState.Modified;
+            context.SaveChanges();
+            return Ok();
+        }
+
+        [HttpGet("teapot")]
+        public ActionResult easterTeapot()
+        {
+            return StatusCode(418);
         }
     }
 }
