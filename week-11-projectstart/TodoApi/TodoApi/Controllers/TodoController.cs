@@ -13,30 +13,29 @@ namespace TodoApi.Controllers
     [ApiController]
     public class TodoController : ControllerBase
     {
-        private readonly TodoContext context;
+        private readonly ITodoRepository repository;
 
-        public TodoController(TodoContext context)
+        public TodoController(ITodoRepository repository)
         {
-            this.context = context;
+            this.repository = repository;
         }
 
         [HttpGet]
         public ActionResult<List<Todo>> GetAllTodoItems()
         {
-            return Ok(context.Todo.ToList());
+            return Ok(repository.GetAllTodo());
         }
 
         [HttpGet("{id}")]
         public ActionResult<Todo> GetTodoItem(long id)
         {
-            return Ok(context.Todo.Find(id));
+            return Ok(repository.GetTodoById(id));
         }
 
         [HttpPost]
         public ActionResult<Todo> CreateNewTodo(Todo todo)
         {
-            context.Todo.Add(todo);
-            context.SaveChanges();
+            repository.CreateTodo(todo);
             return CreatedAtAction("GetTodoItem", new { id = todo.Id }, todo);
         }
 
@@ -48,22 +47,19 @@ namespace TodoApi.Controllers
                 return BadRequest();
             }
 
-            context.Entry(todo).State = EntityState.Modified;
-            context.SaveChanges();
+            repository.UpdateTodo(todo);
             return Ok();
         }
 
         [HttpDelete("{id}")]
         public ActionResult<Todo> DeleteTodo(long id)
         {
-            Todo todo = context.Todo.Find(id);
-            if (todo == null)
+            if (repository.GetTodoById(id) == null)
             {
                 return NotFound();
             }
 
-            context.Todo.Remove(todo);
-            context.SaveChanges();
+            repository.DeleteTodo(id);
             return NoContent();
         }
 
