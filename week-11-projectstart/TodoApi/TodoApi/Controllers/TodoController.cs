@@ -53,6 +53,20 @@ namespace TodoApi.Controllers
             return Ok();
         }
 
+        [HttpDelete("{id}")]
+        public ActionResult<Todo> DeleteTodo(long id)
+        {
+            Todo todo = context.Todo.Find(id);
+            if (todo == null)
+            {
+                return NotFound();
+            }
+
+            context.Todo.Remove(todo);
+            context.SaveChanges();
+            return NoContent();
+        }
+
         [HttpGet("teapot")]
         public ActionResult easterTeapot()
         {
