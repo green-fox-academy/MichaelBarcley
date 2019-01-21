@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TodoApi.Models;
@@ -9,6 +10,7 @@ using TodoApi.Repositories;
 
 namespace TodoApi.Controllers
 {
+    [Authorize]
     [Route("api/todo")]
     [ApiController]
     public class TodoController : ControllerBase
