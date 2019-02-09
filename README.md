@@ -1,21 +1,27 @@
 ﻿# Repository of Mihály Barczi at the Green Fox Academy
 ## GitHub username: MichaelBarcley
 
-Welcome to my repository! Please find my projects in the links below:
+Welcome to my repository!
+
+I've learned Java & Spring during the Foundation and Orientation phase, then switched to C# and ASP.NET Core for the Project phase.
+In my free time I also try to look into other languages and technologies to extend my knowledge.
+
+Please find my projects in the links below:
 
 ---
+
 ### Links:  
 [Wanderer- A 2D Adventure game (Java)](https://github.com/MichaelBarcley/wanderer-java) 
 
-[Reddit clone (Java Spring)](https://github.com/green-fox-academy/MichaelBarcley/tree/master/week-09/day-4)
+[Reddit clone (Java Spring)](https://github.com/green-fox-academy/MichaelBarcley/tree/master/Java/week-09/day-4)
 
-[ToDo application (Java Spring)](https://github.com/green-fox-academy/MichaelBarcley/tree/master/week-09/day-1/sqldemo)
+[ToDo application (Java Spring)](https://github.com/green-fox-academy/MichaelBarcley/tree/master/Java/week-09/day-1/sqldemo)
 
-[Programmer Fox Club- Have your own Fox! (Java Spring)](https://github.com/green-fox-academy/MichaelBarcley/tree/master/week-08/day-5)
+[Programmer Fox Club- Have your own Fox! (Java Spring)](https://github.com/green-fox-academy/MichaelBarcley/tree/Java/master/week-08/day-5)
 
 [My github.io webpage (JavaScript)](https://michaelbarcley.github.io/)
 
-[ToDo Api with JWT auth (C# ASP.Net Core)](https://github.com/green-fox-academy/MichaelBarcley/tree/master/week-11-projectstart/TodoApi)
+[ToDo Api with JWT auth (C# ASP.Net Core)](https://github.com/green-fox-academy/MichaelBarcley/tree/master/mypractice-C%23/TodoApi)
 
 ---
 
