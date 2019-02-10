@@ -11,17 +11,17 @@ Please find my projects in the links below:
 ---
 
 ### Links:  
-[Wanderer- A 2D Adventure game (Java)](https://github.com/MichaelBarcley/wanderer-java) 
+[Wanderer- A 2D Adventure game](https://github.com/MichaelBarcley/wanderer-java) `Java`
 
-[Reddit clone (Java Spring)](https://github.com/green-fox-academy/MichaelBarcley/tree/master/Java/week-09/day-4)
+[Reddit clone](https://github.com/green-fox-academy/MichaelBarcley/tree/master/Java/week-09/day-4) `Java Spring`
 
-[ToDo application (Java Spring)](https://github.com/green-fox-academy/MichaelBarcley/tree/master/Java/week-09/day-1/sqldemo)
+[ToDo application](https://github.com/green-fox-academy/MichaelBarcley/tree/master/Java/week-09/day-1/sqldemo) `Java Spring`
 
-[Programmer Fox Club- Have your own Fox! (Java Spring)](https://github.com/green-fox-academy/MichaelBarcley/tree/master/Java/week-08/day-5)
+[Programmer Fox Club- Have your own Fox!](https://github.com/green-fox-academy/MichaelBarcley/tree/master/Java/week-08/day-5) `Java Spring`
 
-[My github.io webpage (JavaScript)](https://michaelbarcley.github.io/)
+[My github.io webpage](https://michaelbarcley.github.io/) `JavaScript`
 
-[ToDo Api with JWT auth (C# ASP.Net Core)](https://github.com/green-fox-academy/MichaelBarcley/tree/master/mypractice-C%23/TodoApi)
+[ToDo Api with JWT auth](https://github.com/green-fox-academy/MichaelBarcley/tree/master/C%23/TodoApi) `C# ASP.NET Core`
 
 ---
 
