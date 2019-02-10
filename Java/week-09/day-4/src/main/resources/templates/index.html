@@ -29,7 +29,7 @@
                     </div>
                     <div class="posttext">
                         <h1><a th:text="*{title}" th:href="*{url}"></a></h1>
-                        <a class="source" th:href="*{url}" th:text="'(' + ${#strings.substringBefore(post.url, '/')} + ')'"> (greenfoxacademy.com)</a><br>
+                        <a class="source" th:href="*{url}" th:text="'(' + ${#strings.substringAfter(post.url, 'https://')} + ')'"> (greenfoxacademy.com)</a><br>
                         <span class="submdate" th:text="*{timeSinceCreation} + ' by'"></span>
                         <a class="submitter" href="http://gfa.com">Anonymus</a><br>
                         <span class="num_comments">61 comments </span>
