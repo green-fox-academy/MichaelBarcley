@@ -17,7 +17,7 @@ Please find my projects in the links below:
 
 [ToDo application (Java Spring)](https://github.com/green-fox-academy/MichaelBarcley/tree/master/Java/week-09/day-1/sqldemo)
 
-[Programmer Fox Club- Have your own Fox! (Java Spring)](https://github.com/green-fox-academy/MichaelBarcley/tree/Java/master/week-08/day-5)
+[Programmer Fox Club- Have your own Fox! (Java Spring)](https://github.com/green-fox-academy/MichaelBarcley/tree/master/Java/week-08/day-5)
 
 [My github.io webpage (JavaScript)](https://michaelbarcley.github.io/)
 
