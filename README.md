@@ -4,7 +4,7 @@
 Welcome to my repository!
 
 I've learned **Java & Spring** during the Foundation and Orientation phase, then switched to **C# and ASP.NET Core** for the Project phase.
-In my free time I also try to look into other languages and technologies to extend my knowledge.
+In my free time I also try to look into other languages and technologies (e.g. Angular) to extend my knowledge.
 
 Please find my projects in the links below:
 
