@@ -1,6 +1,3 @@
-﻿# Repository of Mihály Barczi at the Green Fox Academy
-## GitHub username: MichaelBarcley
-
 Welcome to my repository!
 
 I've learned **Java & Spring** during the Foundation and Orientation phase, then switched to **C# and ASP.NET Core** for the Project phase.
